@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #050a0f;
+  --bg-secondary: #0a1520;
+  --bg-card: #0d1f2d;
+  --accent-cyan: #00d4ff;
+  --accent-red: #ff3b3b;
+  --accent-amber: #ffb800;
+  --accent-green: #00ff88;
+  --text-primary: #e8f4f8;
+  --text-muted: #6b8fa8;
+  --border: #1a3448;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.mono {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+
+/* Scan line animation */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.6); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease forwards;
+}
+
+.card-glow:hover {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Risk badge colors */
+.risk-high { color: #ff3b3b; border-color: #ff3b3b; }
+.risk-medium { color: #ffb800; border-color: #ffb800; }
+.risk-low { color: #00d4ff; border-color: #00d4ff; }
+.risk-clean { color: #00ff88; border-color: #00ff88; }

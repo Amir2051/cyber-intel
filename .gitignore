@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+venv/
+.venv/
+
+# Secrets / environment
+.env
+.env.*
+!.env.example
+frontend/.env.local
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+
+# Reports / generated data
+/tmp/cyberintel_*
+*.json.local
+
+# Source archives — keep the unpacked tree, not the zip
+cyberintel-platform.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
